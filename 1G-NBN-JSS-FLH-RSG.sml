@@ -38,10 +38,20 @@ et infinite loop.
 *)
 fun powerNew (a, 0) = 1
   | powerNew (a, 2) = a * a
-  | powerNew (a, n) = if (n mod 2)=1
+  | powerNew (a, n) = if (n mod 2) = 1
                       then a * powerNew (a, n-1)
                       else powerNew( powerNew(a, (n div 2)), 2);
 val pn_21 = powerNew(2, 21);
+
+(* 1G5
+OBS Funktion ikke færdig 
+*)
+(*fun powerCount (a, 0) = 1
+  | powerCount (a, 2) = a * a
+  | powerCount (a, n) = if (n mod 2) = 1
+                        then a * powerCount (a, n-1)
+                        else a * powerCount( powerCount( a, (n div 2)), 2);
+*)
 
 
 
