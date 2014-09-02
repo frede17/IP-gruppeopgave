@@ -1,4 +1,9 @@
-
+(* Uge 1 gruppe aflevering for IP
+Rose
+Jeppe
+Frederik
+Nikolaj
+*)
 (* 1G1
 I denne opgave startede vi med at skrive funktionen for den ene loesning af
 andengradsligningen. Da vi sikrede os at funktionen gav os en rigtig loesning,
@@ -20,17 +25,23 @@ Kaldet giver: Uncaght exception: Domain.
 Vi faar ingen loesning fordi at diskriminaten (b*b)-4*a*c er negativ (~23)
 Derved ingen loesning.
 *)
-val ig3 = solve2 (2.0, 3.0, 4.0);
+(* val ig3 = solve2 (2.0, 3.0, 4.0); Fejl meddelelse *)
 
 (* 1G4
-
+Hvis der kommer et ulige tal ind i funktionen, benytter powerNew den gamle
+power funktion, hvorimod når der kommer et lige tal ind i funktionen, vil
+powerNew funktionen bruge den nye funktionsmaade. Den nye funktionsmaade udnytter
+det omskrevne (a, (n div 2)) dette optimere potensfunktionen til at beregne
+færre gange.
+Bacistilfaelde (a, 2) må man aendre praemissen da der ellers ville forekomme
+et infinite loop.
 *)
-fun powernew (a, 0)= 1
-  | powernew (a, 2)  = a * a
-  | powernew  (a, n)=  if (n mod 2)=1
-                       then a * powernew (a, n-1)
-                       else powernew( powernew(a, (n div 2)),2);
-
+fun powerNew (a, 0) = 1
+  | powerNew (a, 2) = a * a
+  | powerNew (a, n) = if (n mod 2)=1
+                      then a * powerNew (a, n-1)
+                      else powerNew( powerNew(a, (n div 2)), 2);
+val pn_21 = powerNew(2, 21);
 
 
 
