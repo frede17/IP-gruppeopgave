@@ -48,7 +48,7 @@ OBS Funktion ikke færdig
 *)
 fun powerCount (a, 0) = 1
   | powerCount (a, 2) = a * a
-  | powerCount (a, n) = 
+  | powerCount (a, n) =
 if (n mod 2) = 1
 then a * powerCount (a, n-1)
 else a * powerCount( powerCount( a, (n div 2)), 2)
