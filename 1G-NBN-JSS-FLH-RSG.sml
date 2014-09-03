@@ -25,15 +25,6 @@ val ig2 = solve2 (2.0, 3.0, 1.0);
 * Vi faar ingen loesning fordi at diskriminaten (b*b)-4*a*c er negativ (~23)
 * Derved ingen loesning.
 *)
-<<<<<<< HEAD
-val ig3 = solve2 (2.0, 3.0, 4.0);
-
-(* 1G4 *)
-fun powerNew (a, 0) = 1
-             (a, 2) = a * a
-             if n mod 2 = 1 
-             then powerNew (
-=======
 (* val ig3 = solve2 (2.0, 3.0, 4.0); Fejl meddelelse *)
 
 (* 1G4
@@ -54,22 +45,19 @@ fun powerNew (a, 0) = 1
 val pn_21 = powerNew(2, 21)
 
 (* 1G5
-* OBS Funktion ikke færdig
+* Ideén er at lave en hjaelpefunktion der sideloebende med powerCount
+* funktionen, går 1 op pr udregning og dermed giver os antallet udregninger,
+* samt a^n.
+* Vi fik det desvaerre ikke til at gaa op.
 *)
-fun powerCount (a, 0) = 1
-  | powerCount (a, 2) = a * a
+fun multi (a, n, m) = 0;
+
+fun powerCount (a, 0) = (1,1)
+  | powerCount (a, 2) = (a * a , multi(0) + 1)
   | powerCount (a, n) =
-if (n mod 2) = 1
-then a * powerCount (a, n-1)
-<<<<<<< HEAD
-else a * powerCount( powerCount( a, (n div 2)), 2)
-;
+    if (n mod 2) = 1
+    then (a * powerCount (a, n - 1) , multi(0) + 1)
+    else (a * powerCount(powerCount( a, (n div 2)), 2) ,
+    multi(0) + 1);
 
-(*fun solve2 (a, b, c) =
-           ((~b + Math.sqrt((b*b)-(4.0 * a * c))) / (2.0 * a),
-           (~b - Math.sqrt((b*b)-(4.0 * a * c))) / (2.0 * a));*)
 
->>>>>>> origin/master
-=======
-else a * powerCount (powerCount( a, (n div 2)), 2);
->>>>>>> 9e4f88a93e4a2292962978fa1253d29a05f58bc7
