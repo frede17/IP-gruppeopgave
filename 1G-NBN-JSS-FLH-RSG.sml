@@ -4,6 +4,8 @@ Jeppe
 Frederik
 Nikolaj
 *)
+
+
 (* 1G1
 I denne opgave startede vi med at skrive funktionen for den ene loesning af
 andengradsligningen. Da vi sikrede os at funktionen gav os en rigtig loesning,
