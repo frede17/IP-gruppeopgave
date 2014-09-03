@@ -23,14 +23,7 @@ Derved ingen loesning.
 val ig3 = solve2 (2.0, 3.0, 4.0);
 
 (* 1G4 *)
-fun power 
-
-
-
-
-
-
-
-
-
-
+fun powerNew (a, 0) = 1
+             (a, 2) = a * a
+             if n mod 2 = 1 
+             then powerNew (
