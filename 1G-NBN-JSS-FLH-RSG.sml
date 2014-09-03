@@ -44,21 +44,17 @@ fun powerNew (a, 0) = 1
 val pn_21 = powerNew(2, 21);
 
 (* 1G5
-OBS Funktion ikke færdig 
+OBS Funktion ikke færdig
 *)
-(*fun powerCount (a, 0) = 1
+fun powerCount (a, 0) = 1
   | powerCount (a, 2) = a * a
-  | powerCount (a, n) = if (n mod 2) = 1
-                        then a * powerCount (a, n-1)
-                        else a * powerCount( powerCount( a, (n div 2)), 2);
-*)
+  | powerCount (a, n) = 
+if (n mod 2) = 1
+then a * powerCount (a, n-1)
+else a * powerCount( powerCount( a, (n div 2)), 2)
+;
 
-
-
-
-
-
-
-
-
+(*fun solve2 (a, b, c) =
+           ((~b + Math.sqrt((b*b)-(4.0 * a * c))) / (2.0 * a),
+           (~b - Math.sqrt((b*b)-(4.0 * a * c))) / (2.0 * a));*)
 
